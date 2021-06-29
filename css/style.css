@@ -1,3 +1,9 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 :root {
   --color-main-bg: hsl(233, 47%, 7%);
   --color-card-background: hsl(244, 38%, 16%);
@@ -7,71 +13,123 @@
   --color-heading: hsla(0, 0%, 100%, 0.6);
 }
 
+html,
 body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--color-main-bg);
   color: var(--accent-soft-violet);
   font-family: "Inter", sans-serif;
+  font-size: 0.9375rem;
   font-weight: 400;
-  font-size: 15px;
-  color: var(--color-white);
-  box-sizing: border-box;
+  min-height: 100vh;
 }
 
 .card {
-  float: left;
-  padding: 10px;
-
-  width: 80vw;
-  height: 80vh;
+  border-radius: 8px;
+  color: var(--accent-soft-violet);
+  display: flex;
+  overflow: hidden;
+  margin: 10%;
+  max-width: 100%;
+  min-height: 60%;
+  width: 1440px;
 }
+
+.eq {
+  flex: 1;
+}
+
 .card-info {
-  width: 50vw;
+  background-color: var(--color-card-background);
+  flex: 1;
+  max-width: 100%;
+  width: 50%;
+}
+
+p {
+  color: var(--color-paragraph);
+  padding: 0 3rem 0;
 }
 
 .card-pic {
-  width: 50vw;
   background-image: url(/images/image-header-desktop.jpg);
   background-color: var(--color-accent-soft-violet);
   background-blend-mode: multiply;
+  background-position: center;
+  background-repeat: no-repeat;
+  max-width: 100%;
+  width: 50%;
+}
+
+h1 {
+  font-size: xx-large;
 }
 
 h1,
 h3 {
   color: var(--color-white);
+  padding: 3rem 3rem 0;
 }
+
 span {
   color: var(--color-accent-soft-violet);
+  margin-top: 2rem;
+}
+
+.stats {
+  font-size: normal;
+  margin-top: 6rem;
 }
 
 .row {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  padding: 0 3rem;
 }
 
 .subs {
-    text-transform: uppercase;
-    width: 33.33%;
-    margin-top: 0;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+  padding: 0;
+  text-transform: uppercase;
+  width: 33.33%;
+  color: var(--color-white);
+}
+
+p.subs {
+  color: var(--color-heading);
+  font-family: "Lexend Deca", sans-serif;
+  font-size: small;
+  margin-bottom: 3rem;
 }
 
 footer {
-  width: 100%;
-  position: fixed;
-  left: 0;
   bottom: 1rem;
+  left: 0;
+  position: absolute;
+  width: 100%;
 }
+
 .attribution {
+  color: var(--color-white);
   font-size: 11px;
   text-align: center;
-  color: var(--color-white);
 }
 
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
 
-@media screen and (max-width: 600px) {
-  .card {
+@media screen and (min-width: 375px) {
+    .card-info, .card-pic {
     width: 100%;
   }
 }
