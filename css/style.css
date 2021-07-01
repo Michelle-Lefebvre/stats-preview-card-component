@@ -29,54 +29,72 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 0.9375rem;
   font-weight: 400;
+  line-height: 1.5em;
   min-height: 100vh;
 }
 
-.card {
-  border-radius: 8px;
-  color: var(--accent-soft-violet);
-  display: flex;
-  overflow: hidden;
-  margin: 10%;
-  max-width: 100%;
-  min-height: 60%;
-  width: 1440px;
-}
-
-.eq {
-  flex: 1;
-}
-
-.card-info {
-  background-color: var(--color-card-background);
-  flex: 1;
-  max-width: 100%;
-  width: 50%;
-}
+.container {
+    background-color: #2b2f3c;
+    color: var(--accent-soft-violet);
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin: auto 5%;
+    height: fit-content;
+    border-radius: 0.7em;
+    overflow: scroll;
+    
+  }
+  
+  .content {
+      flex: 1 50%;
+      box-sizing: border-box;  
+  }
+  
+  .info {
+      /* flex: 1 70%; */
+      box-sizing: border-box;
+      background-color: var(--color-card-background);
+      padding: 0;
+      order: 2;
+      text-align: center;
+      /* height: 60%; */
+      max-width: 100%;
+      height: auto;
+  }
+  
+  .pic {
+    background-image: url(/images/image-header-mobile.jpg);
+    background-color: var(--color-accent-soft-violet);
+    background-blend-mode: multiply;
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+    max-width: 100%;
+    height: auto;
+    order: 1; 
+    
+    /* visibility: visible; */
+    /* filter: var(--color-accent-soft-violet)(100%) saturate(200%) brightness(70%) hue-rotate(330deg);  */
+  }
 
 p {
   color: var(--color-paragraph);
   padding: 0 3rem 0;
 }
 
-.card-pic {
-  background-image: url(/images/image-header-desktop.jpg);
-  background-color: var(--color-accent-soft-violet);
-  background-blend-mode: multiply;
-  background-position: center;
-  background-repeat: no-repeat;
-  max-width: 100%;
-  width: 50%;
-}
-
 h1 {
-  font-size: xx-large;
+  font-size: 1.8rem;
+  line-height: 1em;
+  color: var(--color-white);
 }
 
 h1,
-h3 {
-  color: var(--color-white);
-  padding: 3rem 3rem 0;
+h2 {
+  padding: 0 3rem 0;
+  max-width: 100%;
 }
 
 span {
@@ -86,12 +104,12 @@ span {
 
 .stats {
   font-size: normal;
-  margin-top: 6rem;
+  margin-top: 3rem;
 }
 
 .row {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 0 3rem;
 }
 
@@ -99,19 +117,21 @@ span {
   margin-bottom: 0.5rem;
   margin-top: 0;
   padding: 0;
-  text-transform: uppercase;
-  width: 33.33%;
+  max-width: 100%;
   color: var(--color-white);
+  flex-direction: column;
 }
 
 p.subs {
   color: var(--color-heading);
   font-family: "Lexend Deca", sans-serif;
   font-size: small;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
 footer {
+    display: block;
   bottom: 1rem;
   left: 0;
   position: absolute;
@@ -128,8 +148,25 @@ footer {
   color: hsl(228, 45%, 44%);
 }
 
-@media screen and (min-width: 375px) {
-    .card-info, .card-pic {
-    width: 100%;
+@media screen and (min-width: 600px) {
+ 
+ .pic {
+    order: 2;
+    width: 50%;
+  background-image: url(/images/image-header-desktop.jpg);
+  
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    padding: 0 3rem;
+  }
+
+  .subs{
+      display: flex;
+      justify-content: center;
+      align-content: center;
+    width: 33.33%;  
   }
 }
